@@ -30,6 +30,9 @@
             <% } %>
             <%- post.more %>
         <% } else { %>
+          <% if (post.tocEnabled) { %>
+            <%- toc(post.content) %>
+          <% } %>
             <%- post.content %>
         <% } %>
         <% if (theme.image_gallery) { %>
