@@ -26,6 +26,9 @@ If you want to report a bug or ask a question, [create an issue](https://github.
         * [Enable all-categories page](#enable-all-categories-page)
         * [Enable all-tags page](#enable-all-tags-page)
         * [Enable all-archives page](#enable-all-archives-page)
+- [Integrated services configuration](#integrated-services-configuration)
+    * [Google Analytics](#google-analytics)
+        * [Exclude hostname (localhost) while writing articles](#exclude-hostname-\(localhost\)-while-wirting-articles)
 - [Front-matter settings](#front-matter-settings)
 - [Running](#running)  
 
@@ -85,7 +88,8 @@ If you want to take advantage of cover image, thumbnail image, and image gallery
 
 ### Enable relative links ###
 
-You have to set `relative_link` to `true` otherwise features like navigation bar will not work correctly.
+You have to set `relative_link` to `false` otherwise if you enter your blog url without the end `/`, like this `http://yourdomain.com/blog`, all assets will not be loaded.
+There is currently an issue on Hexo repository to fix this problem.
 
 ### Enable RSS feed ###
 
@@ -323,11 +327,34 @@ New page will be reach at : `/all-archives`.
 On this page, users will be able to search and filter posts.  
 **Search pattern** : YYYY/MMM/DD
 
+## Integrated services configuration ##
+
+### Google Analytics ###
+
+#### Exclude hostname (localhost) while writing articles ####
+
+While you are writing articles, you need to check the result a lot of times before deploying your site.
+If you have enable Google analytics service, Google will include all requests done, even when hostname is localhost and this can greatly skew the results.
+To overcome this, you have to add a filter on Google Analytics website.
+   
+Follow these steps, to add new filter :   
+1. Sign in to your Google Analytics account 
+2. Select the **Admin** tab and navigate to the **property** in which you want to create the filter **(Account > Property > View)**  
+3. In **View** column, click on **Filters** button  
+4. Click on **+ NEW FILTER** button  
+6. Enter a name for the filter  
+7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`  
+8. Click on **Save** button   
+
 ## Writing posts ##
+
+To write articles, you have to user Markdown langague. [Here](https://guides.github.com/features/mastering-markdown/#examples) you can find the main basics of Markdown syntax.   
+Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
+To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
 
 ### Front-matter settings ###
 
-Tranquilpeak introduces 2 new variables to configure precisly the style of your post : `thumbnailImage` and `coverImage`.  
+Tranquilpeak introduces 2 new variables to configure precisely the style of your post : `thumbnailImage` and `coverImage`.  
   
 Example :  
 ``` markdown
@@ -336,12 +363,15 @@ coverImage: image-2.png
 photos:
     - image-3.jpg
     - image-4.png
+    - http://i.imgur.com/o9r19kD.jpg
+    - https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no#.jpg
 comments: false
 ```
 
 - **thumbnailImage** : Image displayed in index view.
 - **coverImage** : Image displayed in large at the top of your post in post view. If thumbnail image is not configured, cover image is also used as thumbnail image.
-- **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image.
+- **photos** : Images displayed in an image gallery at the end of the post. If thumbnail image is not configured and cover image too, the first photo is used as thumbnail image. 
+**If your image is external and the URL doesn't have an image extension like this : `https://lh3.googleusercontent.com/1GLR8xt-w1024-h686-no`, you have to add at the end `#.jpg` what ever the real image extension otherwise the Fancybox plugin will not detect your image and image gallery wont work correctly**
 - **comments** : Disable the comment of the post.
 
 The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  

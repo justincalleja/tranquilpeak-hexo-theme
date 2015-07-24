@@ -92,7 +92,8 @@ header:
 
 # Author
 author:
-    email: 
+    email:
+    # Your biography (support HTML and Markdown syntax)
     bio:
     job:
     location:
@@ -100,6 +101,17 @@ author:
     # or in `source/assets/images/` (production).
     # Overwritten by your gravatar image if `gravatar_image` is enabled
     picture:
+    # Your Twitter username without the @ (e.g : tranquilpeak)
+    twitter:
+    # Your google plus profile link (e.g : https://plus.google.com/+GoPro)
+    google_plus:
+    # Your Facebook user ids used to connect your blog with your facebook user accounts. separate ids with comma (e.g : 9830047,1003342)
+    # Visit https://developers.facebook.com/docs/platforminsights/domains for more information
+    fb_admin_ids:
+    # Your Facebook app id used to connect your blog with your facebook app account (e.g : 9841307)
+    # Visit https://developers.facebook.com/docs/platforminsights/domains for more information
+    fb_app_id: 
+
 
 # Customization
 # Define the behavior of the sidebar
@@ -109,6 +121,11 @@ author:
 # 3: Display header bar on all screens and large sidebar is swiped
 # 4: Display header bar on all screens and medium sidebar is swiped
 sidebar_behavior: 1
+# Display a table of contents after `<!-- more -->` is insered in a post (false: disable, true: enable).
+# This is a default behavior and it can be customizable for each post in front-matter
+toc: true
+# Head title displayed at the top of the table of contents
+toc_title: Table of contents
 # Display thumbnail image of each post on index pages (disable: 0, enable: 1)
 thumbnail_image: 1
 # Message displayed after the <!-- more --> tag
