@@ -2,6 +2,11 @@
 # For developpers, if you modify this theme, put your images in `source/_images` folder and
 # use grunt task `build` to synchronize assets
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
 # Image directory (default: images)
 image_dir: assets/images
 
@@ -46,10 +51,10 @@ sidebar:
             url: /#about
             icon: question
     author_links:
-        # github:
-        #     title: GitHub
-        #     url: https://github.com/
-        #     icon: github
+        github:
+            title: GitHub
+            url: https://github.com/justincalleja
+            icon: github
         # stack_overflow:
         #     title: Stack Overflow
         #     url: http://stackoverflow.com/users/
@@ -96,7 +101,7 @@ author:
     # Your biography (support HTML and Markdown syntax)
     bio:
     job:
-    location:
+    location: Malta
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production).
     # Overwritten by your gravatar image if `gravatar_image` is enabled
@@ -147,7 +152,7 @@ tag_pagination: 1
 
 # Integrated services
 # Your Disqus shortname
-disqus_shortname:
+disqus_shortname: justincalleja
 # Your Google analystics web property ID : UA-XXXXX-X
 google_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
