@@ -1,4 +1,19 @@
+// code block spacing
 figure.highlight {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+// to give some more room for attribution in the footer
+#main {
+  padding-bottom: 50px;
+}
+
+// reduce footer's margin-top from theme's 70px
+#footer {
+  margin-top: 50px;
+}
+
+.attribution {
+  display: block;
 }
