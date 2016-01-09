@@ -51,9 +51,13 @@ sidebar:
             url: /#about
             icon: question
     author_links:
+        githubHasBlog:
+            title: GitHub (has blog)
+            url: https://github.com/justincalleja
+            icon: github
         github:
             title: GitHub
-            url: https://github.com/justincalleja
+            url: https://github.com/justin-calleja
             icon: github
         # stack_overflow:
         #     title: Stack Overflow
