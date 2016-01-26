@@ -63,10 +63,10 @@ sidebar:
         #     title: Stack Overflow
         #     url: http://stackoverflow.com/users/
         #     icon: stack-overflow
-        # twitter:
-        #     title: Twitter
-        #     url: https://twitter.com/
-        #     icon: twitter
+        twitter:
+            title: Twitter
+            url: https://twitter.com/justin_calleja
+            icon: twitter
         # facebook:
         #     title: Facebook
         #     url: https://www.facebook.com/
