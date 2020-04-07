@@ -1,10 +1,11 @@
 // Global CSS rules for all screen size
 #sidebar {
+    background-color: #252e38;
     font-family:        'Open Sans', sans-serif;
     height:             100%;
     position:           fixed;
     top:                0;
-    background:         map-get($sidebar, background);
+    // background:         map-get($sidebar, background);
     overflow:           auto;
     z-index:            map-get($z-indexes, l-sidebar);
     // Sidebar animation
